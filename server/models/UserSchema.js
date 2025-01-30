@@ -6,6 +6,7 @@ const userSchema = mongoose.Schema({
     google_name: {type: String, required: false},
     email: {type: String, required: true, unique: false},
     password:{ type: String, required: false},
+    house:{type:Schema.Types.ObjectId, ref:"House"},
     role:{type: String, default: 'tenant'},
     status: {type: String, default: 'active'},
     authentication_type:{type: String, enum:['google', 'email/password'], default: 'email/password'},
